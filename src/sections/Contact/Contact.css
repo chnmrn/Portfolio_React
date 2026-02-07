@@ -1,0 +1,99 @@
+:root {
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-ScienceGothic: 'Science Gothic', sans-serif;
+}
+
+.contact {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+.contact__container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.contact__title {
+  font-family: var(--font-ScienceGothic);
+  font-size: clamp(2.25rem, 5vw, 5.75rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  color: #bfc0d1;
+  text-align: left;
+}
+
+.contact__layout {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.contact__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact__text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #9ca3af;
+}
+
+.contact__links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.contact__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contact__label {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: #9ca3af;
+}
+
+.contact__link {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact__link:hover {
+  color: #a78bfa;
+  text-shadow: 0 0 8px rgba(167, 139, 250, 0.6);
+}
+
+.contact__gif {
+  width: 720px;
+  max-width: 100%;
+  opacity: 0.85;
+  flex: 0 0 55%;
+  border: #60519b 4px solid;
+  
+}
+
+
+@media (max-width: 768px) {
+  .contact__layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact__gif {
+    margin: 0 auto;
+  }
+
+}

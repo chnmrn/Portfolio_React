@@ -1,0 +1,97 @@
+:root {
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-ScienceGothic: 'Science Gothic', sans-serif;
+}
+
+.about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+.about__container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.about__title {
+  font-family: var(--font-ScienceGothic);
+  font-size: clamp(2.25rem, 5vw, 5.75rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  color: #bfc0d1;
+  text-align: left;
+}
+
+.about__layout {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about__text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #9ca3af;
+}
+
+.about__text strong {
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+.about__skills {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+
+.about__gif {
+  width: 720px;
+  max-width: 100%;
+  opacity: 0.85;
+  flex: 0 0 55%;
+  border: #60519b 4px solid;
+  
+}
+
+.about__actions {
+  justify-content: center;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .about__layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about__gif {
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .about__content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about__gif {
+    margin: 0 auto;
+  }
+}

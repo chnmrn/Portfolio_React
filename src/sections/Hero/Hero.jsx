@@ -5,34 +5,32 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero__container">
-        <p className="hero__subtitle">Web Developer</p>
-
-        <h1 className="hero__title">
-          <span>Juan Diego Sánchez</span>
-        </h1>
-
-        <div className='hero__content'>
-          <p className="hero__description hero__description--left">
-            Junior Full Stack Developer Building scalable and modern solutions
-          </p>
-
-          <div className='hero__images'>
-            <img src="/src/assets/images/juan.jpeg" alt="Hero Image" className="hero__image" />
-
-            <img src="/src/assets/images/Swrslvt.jpg" alt="Hero Image 2" className="hero__image--secondary" />
+        <div className="hero__content">
+          <div className="hero__vertical">
+            <p className="hero__role">Web Developer</p>
+            <h1 className="hero__title-vertical">
+              <span>Juan Diego</span>
+              <span> Sánchez</span>
+            </h1>
           </div>
 
-          <p className="hero__description hero__description--right">
-            I enjoy doing freelance work for people who want to create their own websites or web systems.
-          </p>
-        </div>
-        
+          <div className="hero__image-wrapper">
+            <img
+              src="/src/assets/images/juan.jpeg"
+              alt="Juan Diego"
+              className="hero__image-main"
+            />
+          </div>
 
-        
-        <div className="hero__actions">
-          <a href="#about" className="btn btn--primary">
-            Check my profile
-          </a>
+          <p className="hero__description hero__description--bottom">
+            Junior Full Stack Developer learning and growing in the 
+            world of web development. Graduated from University Fidelitas
+            in Costa Rica with a degree in Computer Science. Continuously 
+            expanding my skill set and knowledge in the field, 
+            eager to take on new challenges and contribute to innovative projects.
+            You will find some of my projects and experience in the sections below. 
+            Feel free to explore and reach out if you want to connect.
+          </p>
         </div>
       </div>
     </section>

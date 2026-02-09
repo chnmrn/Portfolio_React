@@ -25,16 +25,24 @@
 }
 
 .btn--secondary {
-  background-color: #bfc0d1;
   color: #fff;
   border: 1px solid #bfc0d1;
 
+  padding: 0.75rem 1.75rem;
+  display: inline-block;
+
+  transform: skewX(-15deg);
   box-shadow:
-    0 0 10px rgba(135, 129, 161, 0.6),
-    0 0 20px rgba(137, 133, 151, 0.3);
+    0 0 10px rgba(43, 43, 44, 0.6),
+    0 0 20px rgba(50, 49, 51, 0.3);
+}
+
+.btn--secondary span {
+  display: inline-block;
+  transform: skewX(15deg);
 }
 
 .btn--secondary:hover {
-  background-color: #817e8b;
-  transform: translateY(-2px);
+  background-color: #1b1b1b;
+  transform: skewX(-15deg) translateY(-2px);
 }

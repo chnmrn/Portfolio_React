@@ -1,38 +1,112 @@
+import { useState, useEffect } from 'react'
+
 import './AboutMe.css'
+import techStackData from '../../data/TechStack/techStackData'
+
 
 const About = () => {
+  const [activeGroupIndex, setActiveGroupIndex] = useState(0)
+  const [activeItemIndex, setActiveItemIndex] = useState(0)
+
+  const activeGroup = techStackData[activeGroupIndex]
+  const activeItem = activeGroup.items[activeItemIndex]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveItemIndex(prev =>
+        prev === activeGroup.items.length - 1 ? 0 : prev + 1
+      )
+    }, 2000)
+
+    return () => clearInterval(interval)
+  }, [activeGroupIndex])
+
+
   return (
     <section className="about" id="about">
       <div className="about__container">
-        <h2 className="about__title">About Me</h2>
-
         <div className="about__layout"> 
-          <img src="src/assets/gifs/AboutMe.gif" alt="Profile" className="about__gif" />
+          <div className="about__techstack"> 
+            <h2 className='about__tech__title'> My Tech Stack</h2>
+            <div className="about__tech__layout">
+              <div className="about__tech__visual">
+                <img
+                  key={activeItem.icon}
+                  src={activeItem.icon}
+                  alt={activeItem.name}
+                  className="about__tech__icon-visual"/>
+              </div>
 
-          <div className="about__content">
-            <p className="about__text">
-              I'm a junior Full Stack developer with a focus on Backend. I specialize in creating modern
-              web applications, accessible and well-structured, I love to learn and improve my skills every day.
-              Besides my knowledge in development, I like to create digital art and videogames, learn how to make designs,
-              and explore new technologies.
-            </p>
+              <div className="about__tech__content">
+                {techStackData.map((group, index) => (
+                <div key={group.title}
+                     className={`about__tech__group ${
+                     index === activeGroupIndex ? 'active' : ''
+                     }`}
+                     onMouseEnter={() => {
+                     setActiveGroupIndex(index)
+                     setActiveItemIndex(0)
+                     }}>
+                  <h3 className="about__tech__group-title">{group.title}</h3>
 
-            <p className="about__text">
-              I enjoy transforming ideas into functional digital products,
-              caring about both user experience and code quality.
-              As I grow as a developer, I keep learning new technologies and best practices
-              to deliver high-quality solutions.
-            </p>
-
-            <div className="about__actions">
-              <a href="src/assets/files/CV.pdf" download className="btn btn--primary">
-                Download CV
-              </a>
-
-              <a href="https://www.linkedin.com/in/jdsang/" target="_blank" className="btn btn--secondary">
-                LinkedIn
-              </a>
+                  <p className="about__tech__text">
+                    {group.items.map(item => item.name).join(' · ')}
+                  </p>
+                </div>
+                ))}
+              </div>
             </div>
+          </div>
+                    
+          <div className='about__user'>
+            <h2 className="about__title">About Me</h2>
+            <p className="about__text__user">
+              Name: Juan Diego Sanchez (Chnmrn) <br />
+              Email: <a href="mailto:jdsang18@gmail.com" className="about__link__user">jdsang18@gmail.com</a> <br />
+              Languages: Spanish (Native), English (Fluent) <br />
+              <br />
+              Here are my links: <br />
+            </p>
+            <div className="about__actions__user">
+                <a
+                  href="https://www.linkedin.com/in/jdsang/"
+                  target="_blank"
+                  className="btn btn--secondary"
+                >
+                  LinkedIn
+                </a>
+
+                <a
+                  href="https://github.com/chnmrn"
+                  target="_blank"
+                  className="btn btn--secondary"
+                >
+                  GitHub
+                </a>
+              </div>
+          </div>
+        </div>
+
+        <div className="about__content">
+          <div className='about__experience'>
+            <h2 className="about__exp__title">Experience</h2>
+            <p className="about__exp__text">
+              <ul>
+                <li>Web Developer as an independent freelancer <strong>(2025 - Present)</strong> </li>
+                <li>Created a full stack academic system for the kinder Centro Infantil Agroecologico La Granja <strong>(2024 - 2025)</strong></li>
+                <li>Freelancer Web developer for the company Inside Networks <strong>(2025 - Present)</strong></li>
+              </ul>
+            </p>
+          </div>
+
+          <div className='about__education'>
+            <h2 className="about__ed__title">Education</h2>
+            <p className="about__ed__text">
+              <ul>
+                <li>B.S. in Computer Science, University Fidelitas, Costa Rica <strong>(2022 - 2026)</strong></li>
+                <li>Certificate in MS-900 and Scrum Fundamentals <strong>(2023 - Present)</strong></li>
+              </ul>
+            </p>
           </div>
         </div>
       </div>

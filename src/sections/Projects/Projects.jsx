@@ -1,88 +1,79 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './Projects.css';
 import projectsData from '../../data/Projects/projectsData';
 
 const Projects = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef(null);
 
-    const prevProject = () => {
-        setCurrentIndex((prev) =>
-            prev === 0 ? projectsData.length - 1 : prev - 1
-        );
-    }
+  const startAutoSlide = () => {
+    if (intervalRef.current) return;
 
-    const nextProject = () => {
-        setCurrentIndex((prev) =>
-            prev === projectsData.length - 1 ? 0 : prev + 1
-        );
-    }
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex(prev =>
+        prev === projectsData.length - 1 ? 0 : prev + 1
+      );
+    }, 3000);
+  };
 
-    const prevIndex =
-    currentIndex === 0
-        ? projectsData.length - 1
-        : currentIndex - 1;
+  const stopAutoSlide = () => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = null;
+  };
 
-    const nextIndex =
-    currentIndex === projectsData.length - 1
-        ? 0
-        : currentIndex + 1;
+  useEffect(() => {
+    startAutoSlide();
+    return stopAutoSlide;
+  }, []);
 
-    const currentProject = projectsData[currentIndex];
+  const currentProject = projectsData[currentIndex];
 
-    return (
-        <section className="projects" id="projects">
-            <div className="projects__container">
-                <h1 className="projects__title">Projects</h1>
-                <p className="projects__text">
-                    Here are some of my recent projects. 
-                    If you are interested in more, feel free to check my GitHub profile.
-                </p>
-                <div className="projects__carousel">
+  return (
+    <section className="projects" id="projects">
+      <div className="projects__container">
+        <h1 className="projects__title">Recent Projects</h1>
 
-                    <div className="projects__card-wrapper projects__card--side projects__card--left">
-                        <img
-                        src={projectsData[prevIndex].image}
-                        alt={projectsData[prevIndex].alt}
-                        className="projects__card"
-                        />
-                    </div>
+        <p className="projects__text">
+          A selection of my recent work.  
+          I will update this as new projects come by!
+          Check my projects by clicking them.
+          <br />
+          <br />
+          I usually work in web development, from simple systems to complex 
+          full-stack projects. Occasionally, I enjoy working on projects 
+          outside of this area, such as video games and other non-web 
+          development applications.     
+        </p>
 
-                    <div className="projects__card-wrapper projects__card--active">
-                        <img
-                        src={projectsData[currentIndex].image}
-                        alt={projectsData[currentIndex].alt}
-                        className="projects__card"
-                        />
+        <div className="projects__spacer" />
 
-                        <div className="projects__overlay">
-                        <a className="projects__overlay-btn" href={currentProject.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-                        </div>
-                    </div>
+        <div className="projects__slider">
+          <div className="projects__track">
+            {[...projectsData, ...projectsData].map((project, index) => (
+              <div className="projects__slide" key={index}>
+                <img
+                  src={project.image}
+                  alt={project.alt}
+                  className="projects__image"
+                />
 
-                    <div className="projects__card-wrapper projects__card--side projects__card--right">
-                        <img
-                        src={projectsData[nextIndex].image}
-                        alt={projectsData[nextIndex].alt}
-                        className="projects__card"
-                        />
-                    </div>
-
-                    </div>
-
-                <div className='projects__actions'>
-                    <div className='projects__info'>
-                        <h2 className='projects__subtitle'>{currentProject.title}</h2>
-                        <p className='projects__text'>{currentProject.description}</p>
-                    </div>
-                    <div className='projects__buttons'>
-                        <button className="btn btn--primary projects__arrow" onClick={prevProject}></button>
-                        <button className="btn btn--primary projects__arrow" onClick={nextProject}></button>
-                    </div>
-                    
+                <div className="projects__overlay">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn--secondary"
+                  >
+                    GitHub
+                  </a>
                 </div>
-            </div>
-        </section>
-    );
-}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Projects;

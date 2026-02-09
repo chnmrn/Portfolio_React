@@ -90,23 +90,23 @@ const About = () => {
         <div className="about__content">
           <div className='about__experience'>
             <h2 className="about__exp__title">Experience</h2>
-            <p className="about__exp__text">
+            <div className="about__exp__text">
               <ul>
                 <li>Web Developer as an independent freelancer <strong>(2025 - Present)</strong> </li>
                 <li>Created a full stack academic system for the kinder Centro Infantil Agroecologico La Granja <strong>(2024 - 2025)</strong></li>
                 <li>Freelancer Web developer for the company Inside Networks <strong>(2025 - Present)</strong></li>
               </ul>
-            </p>
+            </div>
           </div>
 
           <div className='about__education'>
             <h2 className="about__ed__title">Education</h2>
-            <p className="about__ed__text">
+            <div className="about__ed__text">
               <ul>
                 <li>B.S. in Computer Science, University Fidelitas, Costa Rica <strong>(2022 - 2026)</strong></li>
                 <li>Certificate in MS-900 and Scrum Fundamentals <strong>(2023 - Present)</strong></li>
               </ul>
-            </p>
+            </div>
           </div>
         </div>
       </div>

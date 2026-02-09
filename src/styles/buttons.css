@@ -43,6 +43,7 @@
 }
 
 .btn--secondary:hover {
-  background-color: #1b1b1b;
+  background-color: #ffffff;
   transform: skewX(-15deg) translateY(-2px);
+  color: #000000;
 }

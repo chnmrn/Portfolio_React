@@ -1,93 +1,58 @@
+import ASP_NET from '../../assets/images/icons/Backend/ASPNET.png'
+import CSharp from '../../assets/images/icons/Backend/CSharp.png'
+import FrameWork from '../../assets/images/icons/Backend/Framework.png'
+import Python from '../../assets/images/icons/Backend/Python.png'
+import RestAPI from '../../assets/images/icons/Backend/RestAPI.png'
+import SQLDB from '../../assets/images/icons/Backend/SQL.png'
+
+import HTML from '../../assets/images/icons/Frontend/HTML.png'
+import CSS from '../../assets/images/icons/Frontend/CSS.png'
+import JavaScript from '../../assets/images/icons/Frontend/JavaScript.png'
+import NextJS from '../../assets/images/icons/Frontend/NextJS.png'
+import React from '../../assets/images/icons/Frontend/React.png'
+
+import Figma from '../../assets/images/icons/Tools/Figma.png'
+import Git from '../../assets/images/icons/Tools/Git.png'
+import GitHub from '../../assets/images/icons/Tools/GitHub.png'
+import Postman from '../../assets/images/icons/Tools/Postman.png'
+import PowerBI from '../../assets/images/icons/Tools/PowerBI.png'
+import Unity from '../../assets/images/icons/Tools/Unity.png'
+import VS2022 from '../../assets/images/icons/Tools/VS2022.png'
+import VSCode from '../../assets/images/icons/Tools/VSCode.png'
+
 const techStackData = [
   {
     title: 'Back End',
     items: [
-      {
-        name: 'C#',
-        icon: 'src/assets/images/icons/Backend/CSharp.png'
-      },
-      {
-        name: 'ASP.NET Core',
-        icon: 'src/assets/images/icons/Backend/ASPNET.png'
-      },
-      {
-        name: 'EntityFramework Core',
-        icon: 'src/assets/images/icons/Backend/Framework.png'
-      },
-      {
-        name: 'RESTful APIs',
-        icon: 'src/assets/images/icons/Backend/RestAPI.png'
-      },
-      {
-        name: 'Python',
-        icon: 'src/assets/images/icons/Backend/Python.png'
-      },
-      {
-        name: 'SQL',
-        icon: 'src/assets/images/icons/Backend/SQL.png'
-      }
+      { name: 'C#', icon: CSharp },
+      { name: 'ASP.NET Core', icon: ASP_NET },
+      { name: 'EntityFramework Core', icon: FrameWork },
+      { name: 'RESTful APIs', icon: RestAPI },
+      { name: 'Python', icon: Python },
+      { name: 'SQL', icon: SQLDB }
     ]
   },
   {
     title: 'Front End',
     items: [
-      {
-        name: 'HTML',
-        icon: 'src/assets/images/icons/Frontend/HTML.png'
-      },
-      {
-        name: 'CSS',
-        icon: 'src/assets/images/icons/Frontend/CSS.png'
-      },
-      {
-        name: 'JavaScript',
-        icon: 'src/assets/images/icons/Frontend/JavaScript.png'
-      },
-      {
-        name: 'React',
-        icon: 'src/assets/images/icons/Frontend/React.png'
-      },
-      {
-        name: 'Next.js',
-        icon: 'src/assets/images/icons/Frontend/NextJS.png'
-      }
+      { name: 'HTML', icon: HTML },
+      { name: 'CSS', icon: CSS },
+      { name: 'JavaScript', icon: JavaScript },
+      { name: 'React', icon: React },
+      { name: 'Next.js', icon: NextJS }
     ]
   },
   {
     title: 'Tools',
     items: [
-      {
-        name: 'Visual Studio 2022',
-        icon: 'src/assets/images/icons/Tools/VS2022.png'
-      },
-      {
-        name: 'Visual Studio Code',
-        icon: 'src/assets/images/icons/Tools/VSCode.png'
-      },
-      {
-        name: 'Git',
-        icon: 'src/assets/images/icons/Tools/Git.png'
-      },
-      {
-        name: 'GitHub',
-        icon: 'src/assets/images/icons/Tools/GitHub.png'
-      },
-      {
-        name: 'Postman',
-        icon: 'src/assets/images/icons/Tools/Postman.png'
-      },
-      {
-        name: 'Figma',
-        icon: 'src/assets/images/icons/Tools/Figma.png'
-      },
-      {
-        name: 'Unity',
-        icon: 'src/assets/images/icons/Tools/Unity.png'
-      },
-      {
-        name: 'Power BI',
-        icon: 'src/assets/images/icons/Tools/PowerBI.png'
-      }
+      { name: 'Visual Studio 2022', icon: VS2022 },
+      { name: 'Visual Studio Code', icon: VSCode },
+      { name: 'Git', icon: Git },
+      { name: 'GitHub', icon: GitHub },
+      { name: 'Postman', icon: Postman },
+      { name: 'Figma', icon: Figma },
+      { name: 'Unity', icon: Unity },
+      { name: 'Power BI', icon: PowerBI}
     ]
   }
 ];

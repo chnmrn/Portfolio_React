@@ -1,4 +1,5 @@
 import './Sidebar.css'
+import chnmrnImg from '../assets/images/icons/Chnmrn.jpeg';
 
 const sections = [
   { id: 'hero', label: 'Hero' },
@@ -31,9 +32,10 @@ const Sidebar = () => {
         ))}
       </ul>
       <img 
-        src="/src/assets/images/icons/Chnmrn.jpeg" 
+        src={chnmrnImg}
         alt="Chnmrn"
-        className="sidebar__image" />
+        className="sidebar__image"
+      />
     </nav>
   )
 }

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import './Hero.css'
 import "/src/styles/buttons.css";
+import juanImg from '../../assets/images/juan.jpeg';
 
 const Hero = () => {
   useEffect(() => {
@@ -51,7 +52,7 @@ const Hero = () => {
 
           <div className="hero__image-wrapper">
             <img
-              src="/src/assets/images/juan.jpeg"
+              src={juanImg}
               alt="Juan Diego"
               className="hero__image-main"
             />

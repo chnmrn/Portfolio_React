@@ -19,3 +19,9 @@
   height: 1px;
   width: 100vw;
 }
+
+@media (max-width: 768px) {
+  .cursor-line {
+    display: none;
+  }
+}

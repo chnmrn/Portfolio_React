@@ -1,0 +1,85 @@
+:root {
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-ScienceGothic: 'Science Gothic', sans-serif;
+  --font-Anton: 'Anton', sans-serif;
+}
+
+.sidebar {
+  position: fixed;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+  z-index: 50;
+
+  width: 4%;      
+  border: 2px solid #bfc0d1;
+}
+
+.sidebar__list {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1.25rem;
+  align-items: flex-start;
+  writing-mode: sideways-lr;
+  text-orientation: mixed;
+  align-self: end;
+  padding-top: 80%;
+}
+
+.sidebar__item {
+  list-style: none;
+}
+
+.sidebar__link {
+  background: none;
+  border: none;
+  color: #bfc0d1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-family: var(--font-Anton);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.sidebar__dot {
+  width: 8px;
+  height: 8px;
+  border: 2px solid #bfc0d1;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.sidebar__link:hover {
+  color: #bfc0d1;
+}
+
+.sidebar__link:hover .sidebar__dot {
+  background: #bfc0d1;
+  transform: rotate(45deg) scale(1.2);
+}
+
+.sidebar__label {
+  opacity: 0.7;
+}
+
+.sidebar__link:hover .sidebar__label {
+  opacity: 1;
+}
+
+.sidebar__image {
+  width: 100%;
+  aspect-ratio: 1 / 1; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}

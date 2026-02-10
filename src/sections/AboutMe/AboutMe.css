@@ -10,11 +10,36 @@
   align-items: center;
   justify-content: center;
   padding: 0 1.5rem;
+  position: relative;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(255,255,255,0.04) 2px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.04) 2px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .about__container {
   max-width: 80%;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .about__title {
@@ -38,6 +63,7 @@
   max-width: 100%;
   opacity: 0.85;
   flex: 0 0 55%;
+  background-color: #000000;
   border: #bfc0d1 4px solid;
   
 }
@@ -71,7 +97,7 @@
 .about__tech__icon-visual {
   width: 280px;
   max-width: 100%;
-  animation: fadeIn 0.4s ease;
+  animation: fadeIn 0.3s ease;
   filter: drop-shadow(0 0 12px rgba(255,255,255,0.35));
 }
 .about__tech__icon-name {
@@ -179,10 +205,6 @@
     flex-direction: column;
     text-align: center;
   }
-
-  .about__gif {
-    margin: 0 auto;
-  }
 }
 
 
@@ -190,10 +212,6 @@
   .about__content {
     grid-template-columns: 1fr;
     text-align: center;
-  }
-
-  .about__gif {
-    margin: 0 auto;
   }
 }
 

@@ -3,7 +3,7 @@ import "/src/styles/buttons.css";
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="hero__container">
         <div className="hero__content">
           <div className="hero__vertical">

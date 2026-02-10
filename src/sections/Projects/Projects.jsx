@@ -30,6 +30,9 @@ const Projects = () => {
 
   return (
     <section className="projects" id="projects">
+      <span className="projects__meta projects__meta--top">
+            ///
+      </span>
       <div className="projects__container">
         <h1 className="projects__title">Recent Projects</h1>
 

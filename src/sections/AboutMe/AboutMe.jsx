@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-
+import { useState, useEffect, useRef } from 'react'
 import './AboutMe.css'
 import techStackData from '../../data/TechStack/techStackData'
 
@@ -24,6 +23,9 @@ const About = () => {
 
   return (
     <section className="about" id="about">
+      <span className="about__meta about__meta--top">
+            ///
+      </span>
       <div className="about__container">
         <div className="about__layout"> 
           <div className="about__techstack"> 
@@ -34,7 +36,7 @@ const About = () => {
                   key={activeItem.icon}
                   src={activeItem.icon}
                   alt={activeItem.name}
-                  className="about__tech__icon-visual"/>
+                  className="about__tech__icon-visual glitch-transition"/>
               </div>
 
               <div className="about__tech__content">

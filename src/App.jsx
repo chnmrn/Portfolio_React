@@ -2,11 +2,13 @@ import Sidebar from './components/Sidebar'
 import Hero from './sections/Hero/Hero'
 import AboutMe from './sections/AboutMe/AboutMe'
 import Projects from './sections/Projects/Projects'
+import Crosshair from "./components/Crosshair";
 
 function App() {
   return (
     <div className="bg-gray-950 text-white">
       <Sidebar />
+      <Crosshair />
       <Hero />
       <AboutMe />
       <Projects />

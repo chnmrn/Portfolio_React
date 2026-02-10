@@ -1,9 +1,44 @@
+import { useEffect } from "react";
 import './Hero.css'
 import "/src/styles/buttons.css";
 
 const Hero = () => {
+  useEffect(() => {
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const element = document.querySelector(".hero__role");
+
+    let interval = null;
+
+    element.addEventListener("mouseenter", () => {
+      let iteration = 0;
+
+      clearInterval(interval);
+
+      interval = setInterval(() => {
+        element.innerText = element.innerText
+          .split("")
+          .map((letter, index) => {
+            if (index < iteration) {
+              return "Web Developer"[index];
+            }
+            return letters[Math.floor(Math.random() * letters.length)];
+          })
+          .join("");
+
+        if (iteration >= "Web Developer".length) {
+          clearInterval(interval);
+        }
+
+        iteration += 1 / 3;
+      }, 30);
+    });
+  }, []);
+
   return (
     <section className="hero" id="hero">
+      <span className="hero__meta hero__meta--top">
+            ///
+      </span>
       <div className="hero__container">
         <div className="hero__content">
           <div className="hero__vertical">
@@ -21,6 +56,10 @@ const Hero = () => {
               className="hero__image-main"
             />
           </div>
+
+          <span className="hero__meta hero__meta--bottom">
+            革新する
+          </span>
 
           <p className="hero__description hero__description--bottom">
             Junior Full Stack Developer learning and growing in the 

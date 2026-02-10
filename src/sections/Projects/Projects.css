@@ -34,6 +34,21 @@
   z-index: 0;
 }
 
+.projects__meta {
+  position: absolute;
+  font-family: var(--font-Anton);
+  font-size: 10rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+.projects__meta--top {
+  font-weight: 1000;
+  top: 2rem;
+  right: 2rem;
+}
+
 .projects__container {
   max-width: 80%;
   margin: 0 auto;
